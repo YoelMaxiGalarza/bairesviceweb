@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Global Styles */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000;
+    color: #fff;
+}
+
+section {
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: #000;
+}
+
+.logo img {
+    width: 90px;
+    padding: 0 10px 0 20px;
+}
+
+/* Navbar Styles */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 0;
+    transition: color 0.3s ease-in-out;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    color: #F7729E;
+}
+
+/* Underline animation */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(25deg, #F7729E 0%, rgba(255,255,255,1) 100%);
+    transition: width 0.3s ease-in-out;
+}
+
+/* On hover, the underline appears */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    display: flex;
+    background-image: url('/bairesviceweb/public/herobackground.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform: translateY(20%);
+    /* Moves the content slightly below the center */
+    z-index: 2;
+    /* Ensure content is above the background */
+}
+
+.hero h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 2.3rem;
+    z-index: 2;
+    color: #fff;
+    position: absolute;
+    top: 10%;
+    transform: translate(0%, -550%);
+    font-family: 'Roboto', sans-serif;
+}
+
+.hero #characters {
+    position: absolute;
+    width: 60%;
+    /* Adjust size as needed */
+    z-index: -1;
+    /* Place it behind the button */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -33%);
+    overflow: hidden;
+}
+
+.cta {
+    padding: 10px 20px;
+    background-color: #F7729E;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 15px;
+    z-index: 2;
+    position: absolute;
+    transform: translate(0%, 550%);
+    border-radius: 81px;
+    border-radius: 81px;
+    background: #F7729E;
+    box-shadow: inset 10px 10px 24px #a34b68,
+                inset -14px -14px 14px #ff99d4;
+    font-family: 'Roboto', sans-serif;
+}
+
+.cta:hover {
+    animation: shadow-inset-center 0.4s linear both
+}
+
+@keyframes shadow-inset-center {
+    0% {
+        background-color: #F7729E;
+        box-shadow: inset 0 00 0 transparent
+    }
+
+    100% {
+        background-color: #fff;
+        color: #F7729E;
+        box-shadow: inset 0 0 14px 2px #F7729E;
+    }
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    background-color: #000000;
+}
+
+.feature {
+    text-align: center;
+    width: 20%;
+    z-index: 2;
+}
+
+.feature img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+.social-media {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-50%);
+}
+
+.social-media a {
+    margin: 10px;
+}
+
+.social-media img {
+    width: 30px;
+}
+
+.slide-bottom {
+    animation: slide-bottom 0.5s linear both
+}
+
+@keyframes slide-bottom {
+    0% {
+        transform: translateY(-100px)
+    }
+
+    100% {
+        transform: translateY(0px)
+    }
+}
