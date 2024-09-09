@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 /* Global Styles */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
     box-sizing: border-box;
     background-color: #000;
     color: #fff;
 }
+
 section {
     overflow: hidden;
 }
@@ -20,11 +21,13 @@ header {
     padding: 5px;
     background-color: #000;
 }
-.logo img{
+
+.logo img {
     width: 90px;
     padding: 0 10px 0 20px;
 }
 
+/* Navbar Styles */
 nav ul {
     display: flex;
     list-style: none;
@@ -35,9 +38,34 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    position: relative;
     text-decoration: none;
     font-weight: bold;
+    padding: 10px 0;
+    transition: color 0.3s ease-in-out;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    color: #F7729E;
+}
+
+/* Underline animation */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(25deg, #F7729E 0%, rgba(255,255,255,1) 100%);
+    transition: width 0.3s ease-in-out;
+}
+
+/* On hover, the underline appears */
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 .hero {
@@ -56,8 +84,10 @@ nav ul li a {
     align-items: center;
     justify-content: center;
     position: relative;
-    transform: translateY(20%); /* Moves the content slightly below the center */
-    z-index: 2; /* Ensure content is above the background */
+    transform: translateY(20%);
+    /* Moves the content slightly below the center */
+    z-index: 2;
+    /* Ensure content is above the background */
 }
 
 .hero h1 {
@@ -69,13 +99,15 @@ nav ul li a {
     position: absolute;
     top: 10%;
     transform: translate(0%, -550%);
-    
+    font-family: 'Roboto', sans-serif;
 }
 
-.hero #characters{
+.hero #characters {
     position: absolute;
-    width: 60%; /* Adjust size as needed */
-    z-index: -1; /* Place it behind the button */
+    width: 60%;
+    /* Adjust size as needed */
+    z-index: -1;
+    /* Place it behind the button */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -33%);
@@ -87,18 +119,36 @@ nav ul li a {
     background-color: #F7729E;
     border: none;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 15px;
     z-index: 2;
     position: absolute;
-    transform: translate(0%, 500%);
+    transform: translate(0%, 550%);
+    border-radius: 81px;
+    border-radius: 81px;
+    background: #F7729E;
+    box-shadow: inset 10px 10px 24px #a34b68,
+                inset -14px -14px 14px #ff99d4;
+    font-family: 'Roboto', sans-serif;
 }
-.cta:hover{
-    color: #F7729E;
-    background-color: #fff;
-    z-index: 2;
+
+.cta:hover {
+    animation: shadow-inset-center 0.4s linear both
+}
+
+@keyframes shadow-inset-center {
+    0% {
+        background-color: #F7729E;
+        box-shadow: inset 0 00 0 transparent
+    }
+
+    100% {
+        background-color: #fff;
+        color: #F7729E;
+        box-shadow: inset 0 0 14px 2px #F7729E;
+    }
 }
 
 .features {
@@ -111,7 +161,7 @@ nav ul li a {
 .feature {
     text-align: center;
     width: 20%;
-    z-index:2;
+    z-index: 2;
 }
 
 .feature img {
@@ -136,43 +186,16 @@ nav ul li a {
     width: 30px;
 }
 
-/* Navbar Styles */
-nav ul {
-    display: flex;
-    list-style: none;
+.slide-bottom {
+    animation: slide-bottom 0.5s linear both
 }
 
-nav ul li {
-    margin: 0 15px;
-}
+@keyframes slide-bottom {
+    0% {
+        transform: translateY(-100px)
+    }
 
-nav ul li a {
-    position: relative;
-    color: #ee93b1;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 0;
-    transition: color 0.3s ease-in-out;
-}
-
-/* Underline animation */
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: #fff;
-    transition: width 0.3s ease-in-out;
-}
-
-/* On hover, the underline appears */
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-/* Optional: Change link color on hover */
-nav ul li a:hover {
-    color: #fff;
+    100% {
+        transform: translateY(0px)
+    }
 }
