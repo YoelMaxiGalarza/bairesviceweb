@@ -1,5 +1,5 @@
 function loadComponent(id, file) {
-    fetch(file)
+    fetch("components/" + file)
         .then(response => response.text())
         .then(data => {
             document.getElementById(id).innerHTML = data;
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     loadComponent('footer', 'footer.html');
 
     // Load initial content (e.g., home page)
-    loadContent('home.html');
+    loadComponent('content', 'home.html')
 });
 
 // Handle navigation without reloading the page
