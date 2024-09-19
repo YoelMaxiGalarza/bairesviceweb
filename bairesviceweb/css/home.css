@@ -108,8 +108,8 @@ nav ul li a:hover::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-}
+    flex-direction: column; 
+ } 
 
 .cta {
     padding: 30px 30px;
@@ -159,8 +159,8 @@ nav ul li a:hover::after {
     z-index: 2;
 }
 
-.feature i {
-    font-size: 100px;
+.icons {
+    font-size: 70px;
     margin-bottom: 15px;
 }
 
@@ -173,10 +173,13 @@ nav ul li a:hover::after {
     justify-content: center;
     align-items: center;
     transform: translateY(-50%);
+    border: 1px solid white;
+    border-radius: 16%;
+    margin-left: 10px;
 }
 
 .social-media a {
-    font-size: 40px;
+    font-size: 20px;
     margin: 10px;
     color: #fff;
 }
@@ -211,4 +214,31 @@ footer{
 footer img{
     width: 200px;
    margin-left: 50px;
+}
+
+
+/* RESPONSIVE CSS*/
+/* Resolucion: 360 x 640*/
+@media only screen and (min-device-width: 360px) {
+    
+}
+/* Resolucion: 375 x 667*/
+@media only screen and (min-device-width: 375px) {
+    
+}
+/* Resolucion: 720 x 1280*/
+@media only screen and (min-device-width: 720px) {
+    
+}
+/* Resolucion: 1366 x 768*/
+@media only screen and (min-device-width: 1366px) {
+    
+}
+/* Resolucion: 1440 x 900*/
+@media only screen and (min-device-width: 1440px) {
+    
+}
+/* Resolucion: 1920 x 1080*/
+@media only screen and (min-device-width: 1920px) {
+    
 }
